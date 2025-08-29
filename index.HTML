@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VITMCI – Medical Coding Institute</title>
+  <meta name="description" content="VITMCI – High‑quality Medical Coding training with placement support, resume & interview prep, live projects, CPC/CCS guidance." />
+  <meta name="keywords" content="VITMCI, Medical Coding Institute, CPC, CCS, HCC coding, training, placement, Thanjavur" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="VITMCI – Medical Coding Institute" />
+  <meta property="og:description" content="High‑quality Medical Coding training with placement support and live projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://your-domain.com" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #0b1220;
+      --brand: #0ea5a4;      /* teal */
+      --brand-2:#2563eb;     /* blue */
+      --danger:#ef4444;
+      --shadow: 0 8px 24px rgba(19,24,31,.06);
+      --radius: 14px;
+      --max: 1200px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background: var(--bg); line-height:1.6;
+    }
+
+    /* Layout helpers */
+    .container{ width:100%; max-width:var(--max); margin-inline:auto; padding: 0 20px; }
+    .grid{ display:grid; gap:24px; }
+    .grid-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    header.nav{
+      position: sticky; top:0; inset-inline:0; z-index:1000;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(15,23,42,.06);
+    }
+    .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:70px; }
+    .brand{ display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--text); }
+    .brand .logo{ width:38px; height:38px; border-radius:10px; background: linear-gradient(180deg, var(--brand), var(--brand-2)); display:grid; place-items:center; font-weight:800; color:white; }
+    .brand span{ font-weight:800; letter-spacing:.4px; }
+
+    nav ul{ display:flex; list-style:none; margin:0; padding:0; gap:18px; }
+    nav a{ color:var(--muted); text-decoration:none; font-weight:600; padding:10px 12px; border-radius:10px; }
+    nav a:hover{ background: rgba(14,165,233,.06); color:var(--text); }
+
+    .btn{ appearance:none; border:none; padding:10px 16px; border-radius:10px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+    .btn.primary{ background: linear-gradient(90deg, var(--brand), var(--brand-2)); color:white; box-shadow: var(--shadow); }
+    .btn.ghost{ background: transparent; color: var(--text); border:1px solid rgba(15,23,42,.06); }
+
+    /* Hero */
+    .hero{ padding: clamp(48px, 8vw, 84px) 0; position:relative; }
+    .hero h1{ font-size: clamp(28px, 6vw, 52px); line-height:1.05; margin:0 0 14px; letter-spacing:.2px; }
+    .hero p{ color:var(--muted); font-size: clamp(15px, 1.8vw, 18px); max-width: 680px; margin: 0 0 26px; }
+    .hero .badge{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; color:var(--brand); font-weight:700; background:rgba(14,165,233,.08); border:1px solid rgba(14,165,233,.12); }
+    .hero-art{ position:relative; min-height: 320px; border-radius: var(--radius); border:1px solid rgba(15,23,42,.04); box-shadow: var(--shadow); background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+    .hero-art .cards{ position:absolute; inset: 18px; display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
+    .hero-card{ background: #ffffff; border-radius:12px; padding:16px; box-shadow: 0 6px 18px rgba(16,24,40,.04); border:1px solid rgba(15,23,42,.04); }
+    .hero-card h4{ margin:0 0 6px; font-size:15px; }
+    .stat{ font-weight:800; font-size: clamp(20px, 3.5vw, 30px); color:var(--text); }
+
+    /* Section */
+    section{ padding: clamp(36px, 6vw, 64px) 0; }
+    .section-head{ display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom: 20px; }
+    .section-head h2{ margin:0; font-size: clamp(22px, 3.2vw, 34px); }
+    .section-head p{ margin:0; color:var(--muted); max-width:680px; }
+
+    /* Cards */
+    .card{ background: #ffffff; border-radius: var(--radius); box-shadow: var(--shadow); border:1px solid rgba(15,23,42,.04); }
+    .card .content{ padding: 18px; }
+
+    /* Features */
+    .features .feature{ display:flex; gap:14px; padding:16px; border-bottom: 1px dashed rgba(15,23,42,.04); }
+    .features .feature:last-child{ border-bottom:none; }
+    .icon{ width:42px; height:42px; border-radius:10px; background: linear-gradient(145deg, rgba(14,165,233,.08), rgba(37,99,235,.06)); display:grid; place-items:center; font-weight:800; }
+
+    /* Courses */
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; background: rgba(15,23,42,.03); border:1px solid rgba(15,23,42,.04); border-radius:999px; color:var(--muted); font-weight:700; font-size:12px; }
+    .course .meta{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0; }
+
+    /* Placement Grid */
+    .placements .grid{
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .placements figure{ margin:0; overflow:hidden; border-radius:12px; border:1px solid rgba(15,23,42,.04); background: #fff; }
+    .placements img{ width:100%; height:220px; object-fit:cover; display:block; }
+    .placements figcaption{ padding:12px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .placements .tag{ font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(15,23,42,.06); }
+
+    /* Testimonials */
+    .testi{ display:flex; flex-direction:column; gap:16px; }
+    .quote{ font-size: 16px; color:var(--text); }
+    .who{ color:var(--muted); font-weight:700; }
+
+    /* CTA */
+    .cta{ text-align:center; padding:42px 24px; border:1px dashed rgba(15,23,42,.04); }
+
+    /* Footer */
+    footer{ border-top:1px solid rgba(15,23,42,.04); padding: 26px 0; color:var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px){ .grid-2, .grid-3 { grid-template-columns: 1fr; } nav ul{ display:none; } .nav-actions button{ display:none; } }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="VITMCI Home">
+        <div class="logo">VI</div>
+        <span>VITMCI</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#placements">Placements</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="#admissions" class="btn primary">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container grid grid-2">
+      <div>
+        <span class="badge" aria-label="Placement badge">🎯 95% Placement Support</span>
+        <h1>Medical Coding Training that gets you <em>hired</em>.</h1>
+        <p>Industry‑ready curriculum, live project exposure, resume & interview prep, and dedicated CPC/CCS guidance. Learn from top trainers and build a career in HCC, IP/OP coding, and more.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn primary" href="#admissions">Start Your Application</a>
+          <a class="btn ghost" href="#courses">View Courses</a>
+        </div>
+      </div>
+      <div class="hero-art card">
+        <div class="cards">
+          <div class="hero-card">
+            <h4>Live Projects</h4>
+            <div class="stat" data-counter="1200">0</div>
+            <div class="muted">Real charts coded by trainees</div>
+          </div>
+          <div class="hero-card">
+            <h4>Hiring Partners</h4>
+            <div class="stat" data-counter="25">0</div>
+            <div class="muted">Trusted by leading firms</div>
+          </div>
+          <div class="hero-card">
+            <h4>Weekly Tests</h4>
+            <div class="stat" data-counter="2">0</div>
+            <div class="muted">Consistent assessment</div>
+          </div>
+          <div class="hero-card">
+            <h4>Alumni Placed</h4>
+            <div class="stat" data-counter="500">0</div>
+            <div class="muted">Across India & abroad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container grid grid-2">
+      <div class="card">
+        <div class="content">
+          <div class="section-head">
+            <h2>Why VITMCI?</h2>
+            <p>We combine medical science with revenue cycle expertise to prepare coders who are accurate, fast, and employable from Day 1.</p>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <div class="icon">🧩</div>
+              <div>
+                <strong>Hands‑on Learning</strong>
+                <div class="muted">Practice on anonymized charts across IP, OP, and HCC with detailed feedback.</div>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="icon">📚</div>
+              <div>
+                <strong>CPC/CCS Prep</strong>
+                <div class="muted">Instructor‑led exam strategies, mock tests, and doubt clearing sessions.</div>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="icon">🧭</div>
+              <div>
+                <strong>Career Services</strong>
+                <div class="muted">Resume polishing, interview prep in English & Tamil, and placement drives.</div>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="icon">🔐</div>
+              <div>
+                <strong>HIPAA‑aware Training</strong>
+                <div class="muted">Compliance, data security, and workflow best practices from day one.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <h3 style="margin-top:0">Key Highlights</h3>
+          <ul>
+            <li>Online + Classroom options with flexible timings</li>
+            <li>24×7 LMS access, recordings, and notes</li>
+            <li>Weekly 2 tests, monthly capstone assessments</li>
+            <li>Live project exposure (HCC, IP/OP)</li>
+            <li>Placement support with multiple vendor tie‑ups</li>
+          </ul>
+          <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="pill">HCC</span>
+            <span class="pill">IP‑DRG</span>
+            <span class="pill">OP‑SDS</span>
+            <span class="pill">CPC</span>
+            <span class="pill">CCS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses">
+    <div class="container">
+      <div class="section-head">
+        <h2>Courses</h2>
+        <p>Choose the track that matches your goals. Every program includes interview preparation, resume support, and live project practice.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card course">
+          <div class="content">
+            <h3>HCC Coding Pro</h3>
+            <p class="muted">Risk Adjustment fundamentals, ICD‑10‑CM mastery, documentation, and audit‑ready workflows.</p>
+            <div class="meta">
+              <span class="pill">Duration: 8 weeks</span>
+              <span class="pill">Mode: Online</span>
+              <span class="pill">Level: Beginner</span>
+            </div>
+          </div>
+        </article>
+        <article class="card course">
+          <div class="content">
+            <h3>IP/OP Coding</h3>
+            <p class="muted">DRG assignment, PCS procedure coding basics, OP facility & pro‑fee essentials.</p>
+            <div class="meta">
+              <span class="pill">Duration: 10 weeks</span>
+              <span class="pill">Mode: Hybrid</span>
+              <span class="pill">Level: Intermediate</span>
+            </div>
+          </div>
+        </article>
+        <article class="card course">
+          <div class="content">
+            <h3>CPC / CCS Exam Prep</h3>
+            <p class="muted">Exam strategy, time management, 6 full‑length mocks, and one‑to‑one mentorship.</p>
+            <div class="meta">
+              <span class="pill">Duration: 6 weeks</span>
+              <span class="pill">Mode: Classroom</span>
+              <span class="pill">Level: Advanced</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placements Gallery (Add your students' photos here) -->
+  <section id="placements" class="placements">
+    <div class="container">
+      <div class="section-head">
+        <h2>Student Placements</h2>
+        <p>We are proud of our achievers. Add student photos and company tags below. (Replace <code>assets/students/*.jpg</code> with your images.)</p>
+      </div>
+      <div class="grid">
+        <!-- Repeat this figure block per student -->
+        <figure>
+          <img src="assets/students/student-01.jpg" alt="Student Name – Placed at Company" />
+          <figcaption>
+            <div>
+              <strong>Jeniba</strong>
+              <div class="muted">Medical Coder</div>
+            </div>
+            <span class="tag">Tata 1mg</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/students/student-02.jpg" alt="Student Name – Placed at Company" />
+          <figcaption>
+            <div>
+              <strong>Bharath</strong>
+              <div class="muted">HCC Coder</div>
+            </div>
+            <span class="tag">Cognizant</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/students/student-03.jpg" alt="Student Name – Placed at Company" />
+          <figcaption>
+            <div>
+              <strong>Ragavi</strong>
+              <div class="muted">IP Coder</div>
+            </div>
+            <span class="tag">Optum</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/students/student-04.jpg" alt="Student Name – Placed at Company" />
+          <figcaption>
+            <div>
+              <strong>Vijay</strong>
+              <div class="muted">OP Coder</div>
+            </div>
+            <span class="tag">Accenture</span>
+          </figcaption>
+        </figure>
+        <!-- /Repeat -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>What Students Say</h2>
+        <p>Real feedback from our learners.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card testi">
+          <div class="content">
+            <div class="quote">“The live projects and weekly tests built my confidence. I cracked my first interview in 2 weeks.”</div>
+            <div class="who">— Anitha, HCC Coder</div>
+          </div>
+        </div>
+        <div class="card testi">
+          <div class="content">
+            <div class="quote">“CPC prep classes were very focused on exam strategy. The mocks really helped me manage time.”</div>
+            <div class="who">— Vinoth, CPC‑A</div>
+          </div>
+        </div>
+        <div class="card testi">
+          <div class="content">
+            <div class="quote">“I loved the bilingual support. The team helped me with resume and interview practice.”</div>
+            <div class="who">— Ranjitha, IP Coder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admissions -->
+  <section id="admissions">
+    <div class="container grid grid-2">
+      <div class="card">
+        <div class="content">
+          <div class="section-head">
+            <h2>Admissions Open</h2>
+            <p>New batch starts <strong>Sep 08</strong>. Limited seats. Apply now to reserve your spot.</p>
+          </div>
+          <form id="applyForm" class="grid" style="grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px;">
+            <label>Full Name
+              <input name="name" required placeholder="Your name" />
+            </label>
+            <label>Email
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+            <label>Phone
+              <input name="phone" required placeholder="+91‑" />
+            </label>
+            <label>Program
+              <select name="program" required>
+                <option value="">Select…</option>
+                <option>HCC Coding Pro</option>
+                <option>IP/OP Coding</option>
+                <option>CPC / CCS Exam Prep</option>
+              </select>
+            </label>
+            <label style="grid-column:1/-1">Message
+              <textarea name="message" rows="4" placeholder="Tell us about your goals…"></textarea>
+            </label>
+            <div style="grid-column:1/-1; display:flex; gap:10px; align-items:center;">
+              <button class="btn primary" type="submit">Submit Application</button>
+              <span id="formMsg" class="muted" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <h3 style="margin-top:0">Need Counseling?</h3>
+          <p class="muted">Talk to our admissions team over phone or WhatsApp for guidance in English or Tamil.</p>
+          <ul>
+            <li><strong>Phone:</strong> +91‑XXXXXXXXXX</li>
+            <li><strong>Email:</strong> admissions@vitmci.com</li>
+            <li><strong>Address:</strong> 805, Orathanadu, Thanjavur, Tamil Nadu – 614625</li>
+          </ul>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="#contact">Contact Us</a>
+            <a class="btn ghost" href="#placements">View Placements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Map -->
+  <section id="contact">
+    <div class="container grid grid-2">
+      <div class="card">
+        <div class="content">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <p>We typically respond within 24 hours.</p>
+          </div>
+          <ul>
+            <li><strong>General:</strong> hello@vitmci.com</li>
+            <li><strong>HR:</strong> hr@vitmci.com</li>
+            <li><strong>Phone:</strong> +91‑XXXXXXXXXX</li>
+          </ul>
+          <p class="muted">Follow us on Instagram, LinkedIn and YouTube for updates and free sessions.</p>
+        </div>
+      </div>
+      <div class="card" aria-label="Map">
+        <div class="content">
+          <h3 style="margin-top:0">Find Us</h3>
+          <div style="aspect-ratio: 16/10; border-radius:12px; overflow:hidden;">
+            <!-- Replace the src below with your Google Map embed link -->
+            <iframe title="VITMCI Location" src="https://maps.google.com/maps?q=Thanjavur&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="card cta">
+        <h2>Ready to build your career in Medical Coding?</h2>
+        <p class="muted">Join VITMCI and get trained by experts with real‑world projects and placement support.</p>
+        <a class="btn primary" href="#admissions">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+      <div>© <span id="year"></span> VITMCI. All rights reserved.</div>
+      <div>Privacy • Terms • Refund Policy</div>
+    </div>
+  </footer>
+
+  <style>
+    /* Simple form controls (kept here to avoid inline CSS bloat above) */
+    input, select, textarea{
+      width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid rgba(15,23,42,.06); background: #fff; color:var(--text);
+      outline:none; transition: border .2s, box-shadow .2s; font: inherit;
+    }
+    input:focus, select:focus, textarea:focus{ border-color: var(--brand-2); box-shadow: 0 0 0 6px rgba(37,99,235,.06); }
+    label{ font-weight:700; color:var(--text); display:block; }
+    ul{ padding-left: 18px; }
+    .muted{ color:var(--muted); }
+  </style>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fun counters in hero
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+    const animateCounter = (el, to, dur=1200) => {
+      let start=null; const from=0;
+      const step=(ts)=>{
+        if(!start) start=ts; const p=Math.min(1,(ts-start)/dur);
+        const val = Math.floor(from + (to-from)*easeOutCubic(p));
+        el.textContent = val.toLocaleString();
+        if(p<1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    document.querySelectorAll('[data-counter]').forEach(el=>{
+      const to = parseInt(el.getAttribute('data-counter'),10) || 0;
+      const obs = new IntersectionObserver(([entry])=>{
+        if(entry.isIntersecting){ animateCounter(el,to); obs.disconnect(); }
+      },{ threshold:.4 });
+      obs.observe(el);
+    });
+
+    // Simple form handler (client‑side only)
+    const form = document.getElementById('applyForm');
+    const msg  = document.getElementById('formMsg');
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      msg.textContent = 'Submitting…';
+      try{
+        // Demo only. Replace with your endpoint (e.g., Google Forms, Formspree, or your backend).
+        await new Promise(r=>setTimeout(r, 800));
+        msg.textContent = '✅ Thank you! We will contact you shortly.';
+        form.reset();
+      }catch(err){
+        msg.textContent = '❌ Something went wrong. Please try again.';
+        msg.style.color = 'var(--danger)';
+      }
+    });
+  </script>
+
+  <!-- Structured Data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "VITMCI – Village INFO Tech Medical Coding Institute",
+    "url": "https://your-domain.com",
+    "logo": "https://your-domain.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "805, Orathanadu",
+      "addressLocality": "Thanjavur",
+      "addressRegion": "TN",
+      "postalCode": "614625",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "customer service",
+      "areaServed": "IN"
+    },
+    "sameAs": [
+      "https://www.instagram.com/yourhandle",
+      "https://www.linkedin.com/company/yourhandle",
+      "https://www.youtube.com/@yourhandle"
+    ]
+  }
+  </script>
+</body>
+</html>
