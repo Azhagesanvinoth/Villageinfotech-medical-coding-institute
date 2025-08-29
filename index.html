@@ -609,11 +609,11 @@
       }
     });
   </script>
-<!-- Scrollable Contact Popup -->
+<!-- Fixed Contact Popup -->
 <div id="contact-popup" style="
-  position:absolute; 
-  bottom:40px; 
-  right:40px; 
+  position:fixed; 
+  bottom:20px; 
+  right:20px; 
   z-index:999; 
   background:#004aad; 
   color:#fff; 
@@ -639,14 +639,8 @@
   document.getElementById('popup-close').addEventListener('click', function() {
     document.getElementById('contact-popup').style.display = 'none';
   });
-
-  // Optional: auto-scroll with page
-  window.addEventListener('scroll', function() {
-    const popup = document.getElementById('contact-popup');
-    const scrollTop = window.scrollY;
-    popup.style.bottom = (40 + scrollTop) + 'px';
-  });
 </script>
+
 
   <!-- Structured Data (Organization) -->
   <script type="application/ld+json">
