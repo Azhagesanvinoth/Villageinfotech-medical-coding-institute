@@ -131,32 +131,70 @@
         </div>
       </div>
     </section>
-
-    <!-- Courses -->
-    <section id="courses" class="container">
-      <div class="section-head">
-        <h2>Our Courses</h2>
-        <p>Choose from our professional coding programs</p>
-      </div>
-      <div class="course-list">
-        <div class="course-item card">
-          <img src="https://images.unsplash.com/photo-1581091870623-31555f8ec7d1?q=80&w=400&auto=format&fit=crop" alt="Basic Medical Coding">
+  <!-- Courses -->
+<section id="courses" class="container">
+  <div class="section-head">
+    <h2>Our Professional Courses</h2>
+    <p>Industry-aligned medical coding programs for real-world skills</p>
+  </div>
+  <div class="course-list">
+    <div class="course-item card">
+      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1581091870623-31555f8ec7d1?q=80&w=400&auto=format&fit=crop" alt="Basic Medical Coding">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
           <h3>Basic Medical Coding</h3>
-          <p>Learn fundamentals, CPT & ICD-10 coding with real charts.</p>
-        </div>
-        <div class="course-item card">
-          <img src="https://images.unsplash.com/photo-1581091215362-4fc1b4c2b2aa?q=80&w=400&auto=format&fit=crop" alt="Advanced Medical Coding">
-          <h3>Advanced Medical Coding</h3>
-          <p>Deep dive into HCC, DRG, and advanced chart coding skills.</p>
-        </div>
-        <div class="course-item card">
-          <img src="https://images.unsplash.com/photo-1581092182166-74b8b5c20638?q=80&w=400&auto=format&fit=crop" alt="HCC Coding Pro">
-          <h3>HCC Coding Pro</h3>
-          <p>Specialized HCC coding training for top healthcare clients.</p>
+          <p style="font-size:0.9rem;">Learn fundamentals, CPT & ICD-10 coding with real charts.</p>
+          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="course-item card">
+      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1581091215362-4fc1b4c2b2aa?q=80&w=400&auto=format&fit=crop" alt="Advanced Medical Coding">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
+          <h3>Advanced Medical Coding</h3>
+          <p style="font-size:0.9rem;">Deep dive into HCC, DRG, and advanced chart coding skills.</p>
+          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-item card">
+      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1581092182166-74b8b5c20638?q=80&w=400&auto=format&fit=crop" alt="HCC Coding Pro">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
+          <h3>HCC Coding Pro</h3>
+          <p style="font-size:0.9rem;">Specialized HCC coding training for top healthcare clients.</p>
+          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<style>
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+.course-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.course-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+.course-img img {
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition: transform 0.4s ease;
+}
+.course-item:hover img {
+  transform: scale(1.05);
+}
+</style>
     <!-- Demo Class -->
     <section id="demo" class="container">
       <div class="section-head">
