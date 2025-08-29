@@ -195,25 +195,56 @@
   transform: scale(1.05);
 }
 </style>
-    <!-- Demo Class -->
-    <section id="demo" class="container">
-      <div class="section-head">
-        <h2>Book a Demo Class</h2>
-        <p>Experience our hands-on teaching before enrolling</p>
+  <!-- Demo Class Apply Section -->
+<section id="demo" class="demo-class-section" style="padding:60px 20px; background:linear-gradient(to right,#e0f7fa,#ffffff);">
+  <div class="container">
+    <div class="section-head" style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-size:2.5rem;color:#0b63d6;font-weight:700;">Apply for Demo Class</h2>
+      <p style="font-size:1.1rem;color:#555;">Experience our premium training before enrolling. Limited seats for high-quality guidance.</p>
+    </div>
+    
+    <div class="demo-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
+      
+      <!-- Demo Student Card -->
+      <div class="card" style="position:relative;overflow:hidden;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&auto=format&fit=crop" alt="Student 1" style="width:100%;height:300px;object-fit:cover;transition:transform 0.4s ease;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.7));color:#fff;">
+          <h3 style="margin:0;font-size:1.3rem;">John Doe</h3>
+          <p style="font-size:0.9rem;margin:4px 0;">Completed CPC & CCS, now placed in top healthcare firm</p>
+          <a href="#applyForm" style="display:inline-block;margin-top:8px;padding:8px 16px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;text-decoration:none;">Apply Now</a>
+        </div>
       </div>
-      <div class="card">
-        <form>
-          <label>Name</label><br>
-          <input type="text" placeholder="Your Name" required><br><br>
-          <label>Email</label><br>
-          <input type="email" placeholder="you@example.com" required><br><br>
-          <label>Phone</label><br>
-          <input type="tel" placeholder="8903108605" required><br><br>
-          <button class="btn" type="submit">Book Demo</button>
-        </form>
-      </div>
-    </section>
 
+      <div class="card" style="position:relative;overflow:hidden;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1603415526960-f8f4bca5a6c1?q=80&w=400&auto=format&fit=crop" alt="Student 2" style="width:100%;height:300px;object-fit:cover;transition:transform 0.4s ease;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.7));color:#fff;">
+          <h3 style="margin:0;font-size:1.3rem;">Jane Smith</h3>
+          <p style="font-size:0.9rem;margin:4px 0;">Learned HCC coding, gained real-time experience with charts</p>
+          <a href="#applyForm" style="display:inline-block;margin-top:8px;padding:8px 16px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;text-decoration:none;">Apply Now</a>
+        </div>
+      </div>
+
+      <div class="card" style="position:relative;overflow:hidden;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1603415526917-74a8e6fa8b32?q=80&w=400&auto=format&fit=crop" alt="Student 3" style="width:100%;height:300px;object-fit:cover;transition:transform 0.4s ease;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.7));color:#fff;">
+          <h3 style="margin:0;font-size:1.3rem;">Ravi Kumar</h3>
+          <p style="font-size:0.9rem;margin:4px 0;">Advanced medical coding & placed in a reputed hospital</p>
+          <a href="#applyForm" style="display:inline-block;margin-top:8px;padding:8px 16px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;text-decoration:none;">Apply Now</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+.demo-cards .card:hover img {
+  transform: scale(1.05);
+}
+.demo-cards .card:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+</style>
     <!-- Placements -->
     <section id="placements" class="container">
       <div class="section-head">
