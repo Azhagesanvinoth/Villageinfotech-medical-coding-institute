@@ -528,6 +528,65 @@
       }
     });
   </script>
+<section class="section" id="demo-class">
+    <h2>Apply for a Demo Class</h2>
+    <p style="color:#333; font-size:1.1em; margin-bottom:20px;">
+        Register now to attend a free demo session and experience our teaching quality firsthand!
+    </p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="course">Select Course</label>
+        <select id="course" name="course" required>
+            <option value="">--Select--</option>
+            <option value="Basic Medical Coding">Basic Medical Coding</option>
+            <option value="Advanced Medical Coding">Advanced Medical Coding</option>
+        </select>
+
+        <button type="submit">Apply Now</button>
+    </form>
+</section>
+
+<style>
+.demo-form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.demo-form label {
+    font-weight: bold;
+}
+.demo-form input,
+.demo-form select {
+    padding: 10px;
+    border: 2px solid #004aad;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.demo-form button {
+    padding: 12px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.demo-form button:hover {
+    background-color: #ff3b2e;
+}
+</style>
 
   <!-- Structured Data (Organization) -->
   <script type="application/ld+json">
