@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -8,6 +9,65 @@
   <meta name="description" content="VITMCI – High‑quality Medical Coding training with placement support, resume & interview prep, live projects, CPC/CCS guidance." />
   <meta name="keywords" content="VITMCI, Medical Coding Institute, CPC, CCS, HCC coding, training, placement, Thanjavur" />
   <link rel="icon" href="/favicon.ico" />
+  <style>
+    /* Full-screen background with animation */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c'); /* Replace with your institute image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: moveBackground 60s linear infinite;
+      z-index: -1;
+      filter: brightness(0.5); /* Darken for text visibility */
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-25%, -25%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .content {
+      text-align: center;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to VITMCI</h1>
+    <p>High‑quality Medical Coding training with placement support, resume & interview prep, live projects, CPC/CCS guidance.</p>
+  </div>
+</body>
+</html>
 
   <!-- Open Graph / SEO -->
   <meta property="og:title" content="VITMCI – Medical Coding Institute" />
