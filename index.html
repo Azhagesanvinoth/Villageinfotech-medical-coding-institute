@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -9,8 +8,7 @@
   <meta name="description" content="VITMCI – High‑quality Medical Coding training with placement support, resume & interview prep, live projects, CPC/CCS guidance." />
   <meta name="keywords" content="VITMCI, Medical Coding Institute, CPC, CCS, HCC coding, training, placement, Thanjavur" />
   <link rel="icon" href="/favicon.ico" />
-  <style>
-    
+
   <!-- Open Graph / SEO -->
   <meta property="og:title" content="VITMCI – Medical Coding Institute" />
   <meta property="og:description" content="High‑quality Medical Coding training with placement support and live projects." />
@@ -67,74 +65,16 @@
     .btn.ghost{ background: transparent; color: var(--text); border:1px solid rgba(15,23,42,.06); }
 
     /* Hero */
-    <section class="hero">
-  <div class="hero-bg">
-    <div class="slide" style="background-image:url('images/bg1.jpg');"></div>
-    <div class="slide" style="background-image:url('images/bg2.jpg');"></div>
-    <div class="slide" style="background-image:url('images/bg3.jpg');"></div>
-  </div>
-
-  <div class="container">
-    <h1>Welcome to VITMCI</h1>
-    <p>High-quality Medical Coding Training | Live Projects | Interview Support</p>
-    <div class="hero-art">
-      <div class="cards">
-        <div class="hero-card">
-          <h4>HCC Coding Pro</h4>
-          <p class="stat">8 Weeks</p>
-        </div>
-        <div class="hero-card">
-          <h4>Advanced Medical Coding</h4>
-          <p class="stat">6 Weeks</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-}
-
-.hero-bg .slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-.hero-bg .slide.active {
-  opacity: 1;
-}
-
-/* Make content appear above background */
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
-<script>
-  const slides = document.querySelectorAll('.hero-bg .slide');
-  let current = 0;
-
-  function nextSlide() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }
-
-  slides[current].classList.add('active');
-  setInterval(nextSlide, 5000); // Change every 5 seconds
-</script>
+    .hero{ padding: clamp(48px, 8vw, 84px) 0; position:relative; }
+    .hero h1{ font-size: clamp(28px, 6vw, 52px); line-height:1.05; margin:0 0 14px; letter-spacing:.2px; }
+    .hero p{ color:var(--muted); font-size: clamp(15px, 1.8vw, 18px); max-width: 680px; margin: 0 0 26px; }
+    .hero .badge{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; color:var(--brand); font-weight:700; background:rgba(14,165,233,.08); border:1px solid rgba(14,165,233,.12); }
+    .hero-art{ position:relative; min-height: 320px; border-radius: var(--radius); border:1px solid rgba(15,23,42,.04); box-shadow: var(--shadow); background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+    .hero-art .cards{ position:absolute; inset: 18px; display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
+    .hero-card{ background: #ffffff; border-radius:12px; padding:16px; box-shadow: 0 6px 18px rgba(16,24,40,.04); border:1px solid rgba(15,23,42,.04); }
+    .hero-card h4{ margin:0 0 6px; font-size:15px; }
+    .stat{ font-weight:800; font-size: clamp(20px, 3.5vw, 30px); color:var(--text); }
 
     /* Section */
     section{ padding: clamp(36px, 6vw, 64px) 0; }
@@ -180,56 +120,27 @@
   </style>
 </head>
 <body>
-
   <!-- Nav -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="#top" aria-label="VITMCI Home">
-      <div class="logo">VI</div>
-      <span>VITMCI</span>
-    </a>
-
-    <nav aria-label="Primary">
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#placements">Placements</a></li>
-    <li><a href="#admissions">Admissions</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#demo-class" class="btn secondary">Demo Class</a></li> <!-- updated -->
-  </ul>
-</nav>
-
-    <div class="nav-actions">
-      <a href="#admissions" class="btn primary">Apply Now</a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="VITMCI Home">
+        <div class="logo">VI</div>
+        <span>VITMCI</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#placements">Placements</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="#admissions" class="btn primary">Apply Now</a>
+      </div>
     </div>
-  </div>
-</header>
-
-<style>
-  /* Style for the Demo Class button */
-  .btn.secondary {
-    display: inline-block;
-    padding: 8px 18px;
-    background: #ff9800;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s, transform 0.3s;
-  }
-  .btn.secondary:hover {
-    background: #fb8c00;
-    transform: translateY(-2px);
-  }
-
-  /* Optional spacing for nav items */
-  nav ul li {
-    display: inline-block;
-    margin: 0 12px;
-  }
-</style>
-
+  </header>
 
   <!-- Hero -->
   <main id="top" class="hero">
@@ -334,67 +245,108 @@
   </section>
 
   <!-- Courses -->
- <section id="courses" style="padding:60px 20px; background:#f4f9ff;">
-  <div class="container">
-    <div class="section-head" style="text-align:center; margin-bottom:40px;">
-      <h2 style="font-size:2.5em; color:#004aad;">Courses</h2>
-      <p style="font-size:1.1em; color:#333;">Choose the track that matches your goals. Every program includes interview preparation, resume support, and live project practice.</p>
+  <section id="courses">
+    <div class="container">
+      <div class="section-head">
+        <h2>Courses</h2>
+        <p>Choose the track that matches your goals. Every program includes interview preparation, resume support, and live project practice.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card course">
+          <div class="content">
+            <h3>HCC Coding Pro</h3>
+            <p class="muted">Risk Adjustment fundamentals, ICD‑10‑CM mastery, documentation, and audit‑ready workflows.</p>
+            <div class="meta">
+              <span class="pill">Duration: 8 weeks</span>
+              <span class="pill">Mode: Online</span>
+              <span class="pill">Level: Beginner</span>
+            </div>
+          </div>
+        </article>
+        <article class="card course">
+          <div class="content">
+            <h3>Basic Medical Coding</h3>
+            <p class="muted">DRG assignment, PCS procedure coding basics, OP facility & pro‑fee essentials.</p>
+            <div class="meta">
+              <span class="pill">Duration: 10 weeks</span>
+              <span class="pill">Mode: Hybrid</span>
+              <span class="pill">Level: Intermediate</span>
+            </div>
+          </div>
+        </article>
+        <article class="card course">
+          <div class="content">
+            <h3>Advaced Medical Coding</h3>
+            <p class="muted">Exam strategy, time management, 6 full‑length mocks, and one‑to‑one mentorship.</p>
+            <div class="meta">
+              <span class="pill">Duration: 6 weeks</span>
+              <span class="pill">Mode: Classroom</span>
+              <span class="pill">Level: Advanced</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="grid grid-3">
-      <!-- Course 1 -->
-      <article class="card course" style="background:linear-gradient(135deg,#81d4fa,#4fc3f7); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
-        <div class="content" style="padding:30px;">
-          <h3>HCC Coding Pro</h3>
-          <p>Risk Adjustment fundamentals, ICD‑10‑CM mastery, documentation, and audit‑ready workflows.</p>
-          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 8 weeks</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Online</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Beginner</span>
-          </div>
-        </div>
-      </article>
+  </section>
+  <section class="section" id="demo-class">
+    <h2>Apply for a Demo Class</h2>
+    <p style="color:#333; font-size:1.1em; margin-bottom:20px;">
+        Register now to attend a free demo session and experience our teaching quality firsthand!
+    </p>
 
-      <!-- Course 2 -->
-      <article class="card course" style="background:linear-gradient(135deg,#a5d6a7,#66bb6a); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
-        <div class="content" style="padding:30px;">
-          <h3>Basic Medical Coding</h3>
-          <p>Learn the essential skills to start your medical coding career, including Basic Anatomy & Physiology, Medical Terminology.</p>
-          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 10 weeks</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Hybrid</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Intermediate</span>
-          </div>
-        </div>
-      </article>
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-      <!-- Course 3 -->
-      <article class="card course" style="background:linear-gradient(135deg,#ffb74d,#ff9800); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
-        <div class="content" style="padding:30px;">
-          <h3>Advanced Medical Coding</h3>
-          <p>Master complex coding skills including ICD-10-CM, ICD-10-PCS, CPT, HCC, and specialized procedure coding for advanced billing.</p>
-          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 6 weeks</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Classroom</span>
-            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Advanced</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="course">Select Course</label>
+        <select id="course" name="course" required>
+            <option value="">--Select--</option>
+            <option value="Basic Medical Coding">Basic Medical Coding</option>
+            <option value="Advanced Medical Coding">Advanced Medical Coding</option>
+        </select>
+
+        <button type="submit">Apply Now</button>
+    </form>
 </section>
 
 <style>
-  #courses .card.course:hover {
-    transform: translateY(-12px) scale(1.03);
-  }
-  #courses h3 {
-    font-size:1.5em; margin-bottom:10px;
-  }
-  #courses p {
-    font-size:1em;
-  }
+.demo-form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.demo-form label {
+    font-weight: bold;
+}
+.demo-form input,
+.demo-form select {
+    padding: 10px;
+    border: 2px solid #004aad;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.demo-form button {
+    padding: 12px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.demo-form button:hover {
+    background-color: #ff3b2e;
+}
 </style>
-
 
   <!-- Placements Gallery (Add your students' photos here) -->
   <section id="placements" class="placements">
@@ -480,95 +432,60 @@
     </div>
   </section>
 
- <!-- Admissions -->
-<section id="admissions" style="background: linear-gradient(135deg, #e3f2fd, #ffffff); padding:60px 20px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); margin:50px 0;">
-  <div class="container" style="max-width:1100px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:40px;">
-    
-    <!-- Admission Form Card -->
-    <div class="card" style="background:#ffffff; padding:30px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;">
-      <div class="section-head" style="text-align:center; margin-bottom:25px;">
-        <h2 style="font-size:2em; color:#004aad; margin-bottom:8px;">Admissions Open</h2>
-        <p style="color:#0b1220;">New batch starts <strong>Sep 08</strong>. Limited seats. Reserve your spot today!</p>
-      </div>
-      <form id="applyForm" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
-        <label style="display:flex; flex-direction:column;">Full Name
-          <input name="name" required placeholder="Your name" style="padding:12px; border-radius:10px; border:1px solid #ccc; transition:0.3s;">
-        </label>
-        <label style="display:flex; flex-direction:column;">Email
-          <input type="email" name="email" required placeholder="you@example.com" style="padding:12px; border-radius:10px; border:1px solid #ccc; transition:0.3s;">
-        </label>
-        <label style="display:flex; flex-direction:column;">Phone
-          <input name="phone" required placeholder="+91‑" style="padding:12px; border-radius:10px; border:1px solid #ccc; transition:0.3s;">
-        </label>
-        <label style="display:flex; flex-direction:column;">Program
-          <select name="program" required style="padding:12px; border-radius:10px; border:1px solid #ccc; transition:0.3s;">
-            <option value="">Select…</option>
-            <option>HCC Coding Pro</option>
-            <option>Basic Medical Coding</option>
-            <option>Advanced Medical Coding</option>
-          </select>
-        </label>
-        <label style="grid-column:1/-1; display:flex; flex-direction:column;">Message
-          <textarea name="message" rows="4" placeholder="Tell us about your goals…" style="padding:12px; border-radius:10px; border:1px solid #ccc; transition:0.3s;"></textarea>
-        </label>
-        <div style="grid-column:1/-1; display:flex; gap:15px; align-items:center; justify-content:flex-start; margin-top:10px;">
-          <button class="btn primary" type="submit" style="flex:1; padding:14px; font-size:1.1em; background:#004aad; color:#fff; border:none; border-radius:12px; cursor:pointer; transition:0.3s;">
-            Submit Application
-          </button>
-          <span id="formMsg" class="muted" role="status" aria-live="polite"></span>
+  <!-- Admissions -->
+  <section id="admissions">
+    <div class="container grid grid-2">
+      <div class="card">
+        <div class="content">
+          <div class="section-head">
+            <h2>Admissions Open</h2>
+            <p>New batch starts <strong>Sep 08</strong>. Limited seats. Apply now to reserve your spot.</p>
+          </div>
+          <form id="applyForm" class="grid" style="grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px;">
+            <label>Full Name
+              <input name="name" required placeholder="Your name" />
+            </label>
+            <label>Email
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+            <label>Phone
+              <input name="phone" required placeholder="+91‑" />
+            </label>
+            <label>Program
+              <select name="program" required>
+                <option value="">Select…</option>
+                <option>HCC Coding Pro</option>
+                <option>IP/OP Coding</option>
+                <option>CPC / CCS Exam Prep</option>
+              </select>
+            </label>
+            <label style="grid-column:1/-1">Message
+              <textarea name="message" rows="4" placeholder="Tell us about your goals…"></textarea>
+            </label>
+            <div style="grid-column:1/-1; display:flex; gap:10px; align-items:center;">
+              <button class="btn primary" type="submit">Submit Application</button>
+              <span id="formMsg" class="muted" role="status" aria-live="polite"></span>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-    
-    <!-- Counseling & Contact Card -->
-    <div class="card" style="background:#ffffff; padding:30px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.3s;">
-      <h3 style="margin-top:0; color:#004aad;">Need Counseling?</h3>
-      <p style="color:#0b1220;">Talk to our admissions team over phone or WhatsApp for guidance in English or Tamil.</p>
-      <ul style="list-style:none; padding:0; margin:20px 0; color:#0b1220;">
-        <li><strong>📞 Phone:</strong> +91‑8903108605</li>
-        <li><strong>📧 Email:</strong> villageinfotechclient@gmail.com</li>
-        <li><strong>📍 Address:</strong> 805, Orathanadu, Thanjavur, Tamil Nadu – 614625</li>
-      </ul>
-      <div style="display:flex; gap:15px; flex-wrap:wrap;">
-        <a class="btn ghost" href="#contact" style="padding:12px 20px; border:2px solid #004aad; color:#004aad; border-radius:12px; text-decoration:none; transition:0.3s;">Contact Us</a>
-        <a class="btn ghost" href="#placements" style="padding:12px 20px; border:2px solid #004aad; color:#004aad; border-radius:12px; text-decoration:none; transition:0.3s;">View Placements</a>
+      </div>
+      <div class="card">
+        <div class="content">
+          <h3 style="margin-top:0">Need Counseling?</h3>
+          <p class="muted">Talk to our admissions team over phone or WhatsApp for guidance in English or Tamil.</p>
+          <ul>
+            <li><strong>Phone:</strong> +91‑XXXXXXXXXX</li>
+            <li><strong>Email:</strong> admissions@vitmci.com</li>
+            <li><strong>Address:</strong> 805, Orathanadu, Thanjavur, Tamil Nadu – 614625</li>
+          </ul>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="#contact">Contact Us</a>
+            <a class="btn ghost" href="#placements">View Placements</a>
+          </div>
+        </div>
       </div>
     </div>
-    
-  </div>
-</section>
-
-<section class="section" id="demo-class" style="background: linear-gradient(90deg, #e0f7fa, #ffffff); border-radius: 20px; padding: 50px 20px; margin: 40px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);">
-  <div class="container" style="max-width: 700px; text-align:center;">
-    <h2 style="font-size:2.2em; margin-bottom:10px; color:#004aad;">Attend a Free Demo Class</h2>
-    <p style="font-size:1.1em; color:#0b1220; margin-bottom:30px;">
-        Register now to experience our teaching quality firsthand. Get a glimpse of our live projects, interactive sessions, and expert guidance.
-    </p>
-
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form" style="display:flex; flex-direction:column; gap:15px;">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-
-        <label for="course">Select Course</label>
-        <select id="course" name="course" required>
-            <option value="">--Select--</option>
-            <option value="Basic Medical Coding">Basic Medical Coding</option>
-            <option value="Advanced Medical Coding">Advanced Medical Coding</option>
-        </select>
-
-        <button type="submit" style="padding:14px; font-size:1.2em; background: #004aad; color:#fff; border-radius:12px; border:none; cursor:pointer; transition:0.3s;">
-            Apply Now
-        </button>
-    </form>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact / Map -->
   <section id="contact">
@@ -618,18 +535,54 @@
   </footer>
 
   <style>
-    /* Simple form controls (kept here to avoid inline CSS bloat above) */
-    input, select, textarea{
-      width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid rgba(15,23,42,.06); background: #fff; color:var(--text);
-      outline:none; transition: border .2s, box-shadow .2s; font: inherit;
-    }
-    input:focus, select:focus, textarea:focus{ border-color: var(--brand-2); box-shadow: 0 0 0 6px rgba(37,99,235,.06); }
-    label{ font-weight:700; color:var(--text); display:block; }
-    ul{ padding-left: 18px; }
-    .muted{ color:var(--muted); }
-  </style>
+/* Backgrounds */
+body {
+    background-color: #fdfdfd; /* Light base */
+    color: #333; /* Main text color */
+    font-family: 'Arial', sans-serif;
+}
 
-  <script>
+/* Header */
+header {
+    background-color: #004aad; /* Deep blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #ff6f61; /* Accent orange */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #ff3b2e; /* Darker orange on hover */
+}
+
+/* Links */
+a {
+    color: #004aad; /* Blue links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6f61; /* Accent color on hover */
+}
+
+/* Sections */
+.section {
+    padding: 40px;
+    background-color: #e9f1ff; /* Light blue background for sections */
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
     // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -670,38 +623,6 @@
       }
     });
   </script>
-<!-- Fixed Contact Popup -->
-<div id="contact-popup" style="
-  position:fixed; 
-  bottom:20px; 
-  right:20px; 
-  z-index:999; 
-  background:#004aad; 
-  color:#fff; 
-  padding:14px 20px; 
-  border-radius:16px; 
-  box-shadow:0 8px 16px rgba(0,0,0,0.2);
-  font-family:sans-serif;
-  cursor:pointer;
-  transition:0.3s;
-">
-  <div id="popup-header" style="display:flex; justify-content:space-between; align-items:center;">
-    <span>Contact Us</span>
-    <span id="popup-close" style="cursor:pointer;">✖</span>
-  </div>
-  <div id="popup-body" style="margin-top:10px; display:flex; flex-direction:column; gap:8px;">
-    <a href="tel:+918903108605" style="color:#fff; text-decoration:none;">📞 +91‑8903108605</a>
-    <a href="mailto:villageinfotechclient@gmail.com" style="color:#fff; text-decoration:none;">✉ villageinfotechclient@gmail.com</a>
-  </div>
-</div>
-
-<script>
-  // Close button functionality
-  document.getElementById('popup-close').addEventListener('click', function() {
-    document.getElementById('contact-popup').style.display = 'none';
-  });
-</script>
-
 
   <!-- Structured Data (Organization) -->
   <script type="application/ld+json">
