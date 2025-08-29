@@ -127,15 +127,16 @@
         <div class="logo">VI</div>
         <span>VITMCI</span>
       </a>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#placements">Placements</a></li>
-          <li><a href="#admissions">Admissions</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<nav aria-label="Primary">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#admissions">Admissions</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#demo-class" class="btn secondary">Demo Class</a></li> <!-- updated -->
+  </ul>
+</nav>
       <div class="nav-actions">
         <a href="#admissions" class="btn primary">Apply Now</a>
       </div>
@@ -245,56 +246,75 @@
   </section>
 
   <!-- Courses -->
-  <section id="courses">
-    <div class="container">
-      <div class="section-head">
-        <h2>Courses</h2>
-        <p>Choose the track that matches your goals. Every program includes interview preparation, resume support, and live project practice.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card course">
-          <div class="content">
-            <h3>HCC Coding Pro</h3>
-            <p class="muted">Risk Adjustment fundamentals, ICD‑10‑CM mastery, documentation, and audit‑ready workflows.</p>
-            <div class="meta">
-              <span class="pill">Duration: 8 weeks</span>
-              <span class="pill">Mode: Online</span>
-              <span class="pill">Level: Beginner</span>
-            </div>
-          </div>
-        </article>
-        <article class="card course">
-          <div class="content">
-            <h3>Basic Medical Coding</h3>
-            <p class="muted">DRG assignment, PCS procedure coding basics, OP facility & pro‑fee essentials.</p>
-            <div class="meta">
-              <span class="pill">Duration: 10 weeks</span>
-              <span class="pill">Mode: Hybrid</span>
-              <span class="pill">Level: Intermediate</span>
-            </div>
-          </div>
-        </article>
-        <article class="card course">
-          <div class="content">
-            <h3>Advaced Medical Coding</h3>
-            <p class="muted">Exam strategy, time management, 6 full‑length mocks, and one‑to‑one mentorship.</p>
-            <div class="meta">
-              <span class="pill">Duration: 6 weeks</span>
-              <span class="pill">Mode: Classroom</span>
-              <span class="pill">Level: Advanced</span>
-            </div>
-          </div>
-        </article>
-      </div>
+<section id="courses" style="padding:60px 20px; background:#f4f9ff;">
+  <div class="container">
+    <div class="section-head" style="text-align:center; margin-bottom:40px;">
+      <h2 style="font-size:2.5em; color:#004aad;">Courses</h2>
+      <p style="font-size:1.1em; color:#333;">Choose the track that matches your goals. Every program includes interview preparation, resume support, and live project practice.</p>
     </div>
-  </section>
-  <section class="section" id="demo-class">
-    <h2>Apply for a Demo Class</h2>
-    <p style="color:#333; font-size:1.1em; margin-bottom:20px;">
-        Register now to attend a free demo session and experience our teaching quality firsthand!
+    <div class="grid grid-3">
+      <!-- Course 1 -->
+      <article class="card course" style="background:linear-gradient(135deg,#81d4fa,#4fc3f7); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+        <div class="content" style="padding:30px;">
+          <h3>HCC Coding Pro</h3>
+          <p>Risk Adjustment fundamentals, ICD‑10‑CM mastery, documentation, and audit‑ready workflows.</p>
+          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 8 weeks</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Online</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Beginner</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="card course" style="background:linear-gradient(135deg,#a5d6a7,#66bb6a); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+        <div class="content" style="padding:30px;">
+          <h3>Basic Medical Coding</h3>
+          <p>Learn the essential skills to start your medical coding career, including Basic Anatomy & Physiology, Medical Terminology.</p>
+          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 10 weeks</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Hybrid</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Intermediate</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 3 -->
+      <article class="card course" style="background:linear-gradient(135deg,#ffb74d,#ff9800); color:#fff; border:none; transition: transform 0.3s; border-radius:20px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+        <div class="content" style="padding:30px;">
+          <h3>Advanced Medical Coding</h3>
+          <p>Master complex coding skills including ICD-10-CM, ICD-10-PCS, CPT, HCC, and specialized procedure coding for advanced billing.</p>
+          <div class="meta" style="margin-top:15px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Duration: 6 weeks</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Mode: Classroom</span>
+            <span class="pill" style="background:rgba(255,255,255,0.2); color:#fff;">Level: Advanced</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  #courses .card.course:hover {
+    transform: translateY(-12px) scale(1.03);
+  }
+  #courses h3 {
+    font-size:1.5em; margin-bottom:10px;
+  }
+  #courses p {
+    font-size:1em;
+  }
+</style>
+
+<section class="section" id="demo-class" style="background: linear-gradient(90deg, #e0f7fa, #ffffff); border-radius: 20px; padding: 50px 20px; margin: 40px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);">
+  <div class="container" style="max-width: 700px; text-align:center;">
+    <h2 style="font-size:2.2em; margin-bottom:10px; color:#004aad;">Attend a Free Demo Class</h2>
+    <p style="font-size:1.1em; color:#0b1220; margin-bottom:30px;">
+        Register now to experience our teaching quality firsthand. Get a glimpse of our live projects, interactive sessions, and expert guidance.
     </p>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form">
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form" style="display:flex; flex-direction:column; gap:15px;">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -311,42 +331,12 @@
             <option value="Advanced Medical Coding">Advanced Medical Coding</option>
         </select>
 
-        <button type="submit">Apply Now</button>
+        <button type="submit" style="padding:14px; font-size:1.2em; background: #004aad; color:#fff; border-radius:12px; border:none; cursor:pointer; transition:0.3s;">
+            Apply Now
+        </button>
     </form>
+  </div>
 </section>
-
-<style>
-.demo-form {
-    max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.demo-form label {
-    font-weight: bold;
-}
-.demo-form input,
-.demo-form select {
-    padding: 10px;
-    border: 2px solid #004aad;
-    border-radius: 5px;
-    font-size: 1em;
-}
-.demo-form button {
-    padding: 12px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.demo-form button:hover {
-    background-color: #ff3b2e;
-}
-</style>
 
   <!-- Placements Gallery (Add your students' photos here) -->
   <section id="placements" class="placements">
