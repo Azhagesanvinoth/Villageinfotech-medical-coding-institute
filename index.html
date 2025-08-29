@@ -121,26 +121,55 @@
 </head>
 <body>
   <!-- Nav -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="VITMCI Home">
-        <div class="logo">VI</div>
-        <span>VITMCI</span>
-      </a>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#placements">Placements</a></li>
-          <li><a href="#admissions">Admissions</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <a href="#admissions" class="btn primary">Apply Now</a>
-      </div>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="VITMCI Home">
+      <div class="logo">VI</div>
+      <span>VITMCI</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- Demo Class link added -->
+        <li><a href="#demo" class="btn secondary">Demo Class</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#admissions" class="btn primary">Apply Now</a>
     </div>
-  </header>
+  </div>
+</header>
+
+<style>
+  /* Style for the Demo Class button */
+  .btn.secondary {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .btn.secondary:hover {
+    background: #fb8c00;
+    transform: translateY(-2px);
+  }
+
+  /* Optional spacing for nav items */
+  nav ul li {
+    display: inline-block;
+    margin: 0 12px;
+  }
+</style>
+
 
   <!-- Hero -->
   <main id="top" class="hero">
