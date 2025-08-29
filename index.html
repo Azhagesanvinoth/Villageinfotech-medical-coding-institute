@@ -307,36 +307,36 @@
   }
 </style>
 
-<section class="section" id="demo-class" style="background: linear-gradient(90deg, #e0f7fa, #ffffff); border-radius: 20px; padding: 50px 20px; margin: 40px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);">
-  <div class="container" style="max-width: 700px; text-align:center;">
-    <h2 style="font-size:2.2em; margin-bottom:10px; color:#004aad;">Attend a Free Demo Class</h2>
-    <p style="font-size:1.1em; color:#0b1220; margin-bottom:30px;">
-        Register now to experience our teaching quality firsthand. Get a glimpse of our live projects, interactive sessions, and expert guidance.
-    </p>
+<section class="section demo-class-section">
+  <div class="demo-bg">
+    <div class="slide" style="background-image:url('images/demo1.jpg');"></div>
+    <div class="slide" style="background-image:url('images/demo2.jpg');"></div>
+    <div class="slide" style="background-image:url('images/demo3.jpg');"></div>
+  </div>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form" style="display:flex; flex-direction:column; gap:15px;">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+  <div class="demo-container">
+    <div class="demo-card">
+      <h2 class="demo-title">Attend a Free Demo Class</h2>
+      <p class="demo-desc">
+        Register now to experience our teaching quality firsthand. Live projects, interactive sessions, and expert guidance await you.
+      </p>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-
-        <label for="course">Select Course</label>
-        <select id="course" name="course" required>
-            <option value="">--Select--</option>
-            <option value="Basic Medical Coding">Basic Medical Coding</option>
-            <option value="Advanced Medical Coding">Advanced Medical Coding</option>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="demo-form">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="course" required>
+          <option value="">--Select Course--</option>
+          <option value="Advanced Medical Coding">HCC Coding Pro</option>
+          <option value="Basic Medical Coding">Basic Medical Coding</option>
+          <option value="Advanced Medical Coding">Advanced Medical Coding</option>
         </select>
-
-        <button type="submit" style="padding:14px; font-size:1.2em; background: #004aad; color:#fff; border-radius:12px; border:none; cursor:pointer; transition:0.3s;">
-            Apply Now
-        </button>
-    </form>
+        <button type="submit">Apply Now</button>
+      </form>
+    </div>
   </div>
 </section>
+
 
   <!-- Placements Gallery (Add your students' photos here) -->
   <section id="placements" class="placements">
