@@ -480,6 +480,37 @@
     
   </div>
 </section>
+<!-- Fixed Contact Popup -->
+<div id="contact-popup" style="
+  position:fixed; 
+  bottom:20px; 
+  right:20px; 
+  z-index:999; 
+  background:#004aad; 
+  color:#fff; 
+  padding:14px 20px; 
+  border-radius:16px; 
+  box-shadow:0 8px 16px rgba(0,0,0,0.2);
+  font-family:sans-serif;
+  cursor:pointer;
+  transition:0.3s;
+">
+  <div id="popup-header" style="display:flex; justify-content:space-between; align-items:center;">
+    <span>Contact Us</span>
+    <span id="popup-close" style="cursor:pointer;">✖</span>
+  </div>
+  <div id="popup-body" style="margin-top:10px; display:flex; flex-direction:column; gap:8px;">
+    <a href="tel:+918903108605" style="color:#fff; text-decoration:none;">📞 +91‑8903108605</a>
+    <a href="mailto:villageinfotechclient@gmail.com" style="color:#fff; text-decoration:none;">✉ villageinfotechclient@gmail.com</a>
+  </div>
+</div>
+
+<script>
+  // Close button functionality
+  document.getElementById('popup-close').addEventListener('click', function() {
+    document.getElementById('contact-popup').style.display = 'none';
+  });
+</script>
 
 
   <!-- Contact / Map -->
