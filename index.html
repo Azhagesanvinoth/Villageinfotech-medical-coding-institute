@@ -1,324 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VITMCI — Village Info Tech Medical Coding Institute</title>
-  <meta name="description" content="VITMCI — Professional medical coding training: Basic, Advanced & HCC Pro. 100% placement support. Thanjavur region." />
-  <style>
-    :root{
-      --accent:#0b63d6;
-      --accent-2:#ff6b6b;
-      --bg:#ffffff;
-      --glass: rgba(255,255,255,0.2);
-      --card:#f8f9fa;
-      --muted:#555;
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--bg);color:#333;line-height:1.6;}
-    a{text-decoration:none;color:inherit;}
-    img{max-width:100%;display:block;border-radius:12px;object-fit:cover;}
-
-    /* Contact floating */
-    .contact-top{position:fixed;right:18px;top:12px;z-index:1200;display:flex;flex-direction:column;gap:8px}
-    .contact-top a{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;padding:8px 12px;border-radius:999px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(11,99,214,0.12)}
-
-    /* Header */
-    header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,255,255,0.5));backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,0.05);}
-    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo img{width:44px;height:44px;border-radius:10px;}
-    .logo h1{font-size:18px;color:#333;}
-    nav ul{display:flex;gap:12px;list-style:none;}
-    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted);}
-    nav a:hover{color:#000;background:var(--glass);}
-
-    /* Hero */
-    .hero{position:relative;overflow:hidden;min-height:72vh;display:grid;grid-template-columns:1fr 420px;align-items:center;padding:40px;gap:24px;background: linear-gradient(135deg, #ffd6f0, #d0e7ff, #fffacd);}
-    .bg-move{position:absolute;inset:0;z-index:0;overflow:hidden;}
-    .bg-move img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);min-width:120%;min-height:120%;opacity:0.9;transition:transform 12s linear}
-    .bg-move::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6))}
-    .shape{position:absolute;width:320px;height:320px;border-radius:40%;filter:blur(60px);opacity:0.14;mix-blend-mode:screen}
-    .shape.s1{background:linear-gradient(135deg,#ff9a9e,#fad0c4);left:-80px;top:-60px;}
-    .shape.s2{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);right:-120px;bottom:-40px;}
-    .float{animation:floaty 6s ease-in-out infinite}
-    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-
-    .hero .content{position:relative;z-index:3;color:#333;padding:18px}
-    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:12px;color:#fff}
-    h2{font-size:34px;margin-bottom:12px}
-    p.lead{color:#555;max-width:62ch}
-    .cta-row{margin-top:18px;display:flex;gap:12px}
-    .btn{background:var(--accent);padding:10px 16px;border-radius:10px;color:#fff;font-weight:700;display:inline-block}
-    .btn.secondary{background:transparent;border:1px solid rgba(0,0,0,0.05);color:#333}
-
-    /* Section container */
-    .container{max-width:1200px;margin:0 auto;padding:40px 18px}
-    .section-head{text-align:center;margin-bottom:24px}
-    .section-head h2{font-size:28px;margin-bottom:8px}
-    .section-head p{color:var(--muted)}
-
-    /* Cards */
-    .card, .course-card{background:#ffffffcc;padding:18px;border-radius:16px;border:1px solid rgba(0,0,0,0.05);box-shadow:0 6px 20px rgba(0,0,0,0.08);color:#333}
-    .course-list{display:flex;flex-wrap:wrap;gap:12px}
-    .course-item{display:flex;flex-direction:column;gap:8px;flex:1 1 220px}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-    .gallery img{height:140px;object-fit:cover;border-radius:10px}
-
-    /* Testimonials */
-    .testimonials{display:flex;flex-direction:column;gap:18px}
-    .testi{display:flex;gap:12px;align-items:center}
-    .testi .avatar{width:64px;height:64px;border-radius:12px;overflow:hidden}
-    .testi p{margin:0;color:#555;}
-
-    /* Footer */
-    footer{padding:40px;background:#f0f0f0;color:#555;text-align:center;}
-    footer a{color:var(--accent);font-weight:600;}
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;min-height:70vh;padding:28px}
-      nav ul{display:none}
-      .course-list{flex-direction:column}
-    }
-  </style>
-<!-- Floating Contact Bottom Right -->
-<div class="contact-bottom-right">
-  <a href="tel:+918903108605" title="Call/WhatsApp">📞 8903108605</a>
-  <a href="mailto:villageinfotechclient@gmail.com" title="Email">✉ villageinfotechclient@gmail.com</a>
-  <a href="https://instagram.com/villageit.medicalcoding" target="_blank" title="Instagram">📷 @villageit.medicalcoding</a>
-</div>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Class Application</title>
 <style>
-/* Container in bottom-right corner */
-.contact-bottom-right {
-  position: fixed; /* stays visible on scroll */
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column; /* stacked vertically */
-  gap: 12px;
-  z-index: 9999;
-}
-
-/* Style for each contact button */
-.contact-bottom-right a {
-  background: linear-gradient(135deg, #0b63d6, #ff6b6b); /* gradient button */
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 50px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 6px 20px rgba(11, 99, 214, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.contact-bottom-right a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(11, 99, 214, 0.3);
-}
-
-/* Small screens adjustment */
-@media(max-width:768px) {
-  .contact-bottom-right a {
-    padding: 8px 14px;
-    font-size: 0.9rem;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff; /* white background */
+    color: #000;
   }
-}
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: linear-gradient(135deg,#0b63d6,#ff6b6b);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 12px;
+  }
 </style>
-  <header>
-    <div class="nav">
-      <div class="logo">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='18' fill='%230b63d6'/%3E%3Ctext x='50%' y='54%' fill='white' font-size='36' font-family='Arial' font-weight='700' text-anchor='middle' dominant-baseline='middle'%3EVIT%3C/text%3E%3C/svg%3E" alt="VIT logo"/>
-        <div>
-          <h1>VITMCI</h1>
-          <div class="muted">Medical Coding Institute — Thanjavur</div>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#demo">Demo Class</a></li>
-          <li><a href="#placements">Placements</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+</head>
+<body>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero">
-      <div class="bg-move" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1588774069269-1d3f1f6f9a1d?q=80&w=1600&auto=format&fit=crop" alt="Institute background"/>
-        <div class="shape s1 float"></div>
-        <div class="shape s2 float"></div>
-      </div>
-      <div class="content">
-        <span class="eyebrow">100% Placement • Govt. Recognised</span>
-        <h2>Become a Certified Medical Coder — Start a high-paying career</h2>
-        <p class="lead">VITMCI offers industry-led training in Basic Medical Coding, Advanced Medical Coding and HCC Coding Pro — with live charts experience, assignment support and placement assistance across Thanjavur, Nagapattinam, Thiruvarur, Mayiladuthurai.</p>
-        <div class="cta-row">
-          <a href="#demo" class="btn">Apply for Demo</a>
-          <a href="#contact" class="btn secondary">Contact Us</a>
-        </div>
-      </div>
-    </section>
-  <!-- Courses -->
-<section id="courses" class="container">
-  <div class="section-head">
-    <h2>Our Professional Courses</h2>
-    <p>Industry-aligned medical coding programs for real-world skills</p>
-  </div>
-  <div class="course-list">
-    <div class="course-item card">
-      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
-        <img src="https://images.unsplash.com/photo-1581091870623-31555f8ec7d1?q=80&w=400&auto=format&fit=crop" alt="Basic Medical Coding">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
-          <h3>Basic Medical Coding</h3>
-          <p style="font-size:0.9rem;">Learn fundamentals, CPT & ICD-10 coding with real charts.</p>
-          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="course-item card">
-      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
-        <img src="https://images.unsplash.com/photo-1581091215362-4fc1b4c2b2aa?q=80&w=400&auto=format&fit=crop" alt="Advanced Medical Coding">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
-          <h3>Advanced Medical Coding</h3>
-          <p style="font-size:0.9rem;">Deep dive into HCC, DRG, and advanced chart coding skills.</p>
-          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="course-item card">
-      <div class="course-img" style="position:relative;overflow:hidden;border-radius:16px;">
-        <img src="https://images.unsplash.com/photo-1581092182166-74b8b5c20638?q=80&w=400&auto=format&fit=crop" alt="HCC Coding Pro">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff;">
-          <h3>HCC Coding Pro</h3>
-          <p style="font-size:0.9rem;">Specialized HCC coding training for top healthcare clients.</p>
-          <a href="#demo" style="display:inline-block;margin-top:8px;padding:6px 12px;background:#0b63d6;border-radius:8px;font-weight:600;color:#fff;">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<header>
+  <a href="tel:+918903108605">📞 8903108605</a>
+  <a href="mailto:villageinfotechclient@gmail.com">✉ Apply Now</a>
+</header>
 
-<style>
-.course-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
-}
-.course-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.course-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-}
-.course-img img {
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  transition: transform 0.4s ease;
-}
-.course-item:hover img {
-  transform: scale(1.05);
-}
-</style>
-  <!-- Demo Class Apply Section -->
+<main style="padding-top:60px;">
+  <!-- Demo class form will go here next -->
+</main>
 
-<div class="demo-card">
-  <h2>Apply for Demo Class</h2>
-  <p>Fill in your details below and our team will contact you shortly.</p>
-  <form id="demoForm">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <select name="course" required>
-      <option value="">Select Course</option>
-      <option value="Basic">Basic Medical Coding</option>
-      <option value="Advanced">Advanced Medical Coding</option>
-      <option value="HCC">HCC Coding Pro</option>
-    </select>
-    <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
-    <button type="submit">Submit</button>
-    <div class="note">We respect your privacy. Your details are safe with us.</div>
-  </form>
-</div>
-
-<script>
-document.getElementById('demoForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  alert('Demo request sent! Our team will contact you soon.');
-  this.reset();
-});
-</script>
-
-</body>
-</html>
-
-    <!-- Placements -->
-    <section id="placements" class="container">
-      <div class="section-head">
-        <h2>Student Placements</h2>
-        <p>Our students get real-time job assistance & interview preparation</p>
-      </div>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop" alt="Placement 1">
-        <img src="https://images.unsplash.com/photo-1607746882037-55b2c71e2a91?q=80&w=400&auto=format&fit=crop" alt="Placement 2">
-        <img src="https://images.unsplash.com/photo-1607746882051-4e8c3a4e5e8a?q=80&w=400&auto=format&fit=crop" alt="Placement 3">
-        <img src="https://images.unsplash.com/photo-1607746882035-3f2d5b0d4c5f?q=80&w=400&auto=format&fit=crop" alt="Placement 4">
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="container">
-      <div class="section-head">
-        <h2>Testimonials</h2>
-        <p>Hear from our successful students</p>
-      </div>
-      <div class="testimonials">
-        <div class="testi card">
-          <div class="avatar">
-            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=80&auto=format&fit=crop" alt="Student 1">
-          </div>
-          <p>"VITMCI's live chart practice helped me land my first medical coding job within 3 months!" — Priya S.</p>
-        </div>
-        <div class="testi card">
-          <div class="avatar">
-            <img src="https://images.unsplash.com/photo-1595152772835-7c7f46d34a2f?q=80&w=80&auto=format&fit=crop" alt="Student 2">
-          </div>
-          <p>"Highly supportive trainers and placement guidance. I feel confident coding real charts." — Arun K.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="container">
-      <div class="section-head">
-        <h2>Contact Us</h2>
-        <p>Reach out for any queries or enrollment</p>
-      </div>
-      <div class="card">
-        <p><strong>Phone:</strong> <a href="tel:+918903108605">+91 8903108605</a></p>
-        <p><strong>Email:</strong> <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/villageit.medicalcoding" target="_blank">@villageit.medicalcoding</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 VITMCI — Village Info Tech Medical Coding Institute. All Rights Reserved.</p>
-    <p><a href="#home">Back to top</a></p>
-  </footer>
 </body>
 </html>
