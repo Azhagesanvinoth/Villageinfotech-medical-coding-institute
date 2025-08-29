@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VITMCI Institute — Medical Coding & Training</title>
+  <title>VITMCI Institute — Medical Coding & Training (Lite)</title>
   <meta name="description" content="VITMCI Institute: Medical Coding Training — Basic, Advanced, and HCC Pro. 100% Placement support. Thanjavur, Nagapattinam, Thiruvarur, Mayiladuthurai." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,79 +12,88 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+    /* Light / White-mixed theme */
     :root{
-      --bg:#0a0f1f;--card:#0f1730;--muted:#a9b4d0;--brand:#6ee7ff;--brand2:#7c3aed;--accent:#22c55e;--danger:#ef4444;--gold:#f59e0b;
+      --bg:#f7fafc; /* page background light */
+      --card:#ffffff; /* cards */
+      --muted:#475569; /* muted text */
+      --brand:#0ea5e9; /* cyan */
+      --brand2:#7c3aed; /* purple accent */
+      --accent:#059669; /* green */
+      --danger:#ef4444;
+      --soft-border:rgba(15,23,42,0.06);
+      --text:#0b1220;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#fff;scroll-behavior:smooth}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
     a{color:var(--brand)}
-    /* POWERFUL HEADER */
-    .topbar{position:sticky;top:0;z-index:999;background:linear-gradient(90deg,rgba(12,18,40,.9),rgba(14,20,55,.85));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07)}
+    /* POWERFUL HEADER (light) */
+    .topbar{position:sticky;top:0;z-index:999;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(250,250,250,.85));backdrop-filter:blur(6px);border-bottom:1px solid var(--soft-border)}
     .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
     .row{display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px;padding:12px 0}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand2),var(--brand));display:grid;place-items:center;box-shadow:0 6px 30px rgba(124,58,237,.5)}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--brand2),var(--brand));display:grid;place-items:center;box-shadow:0 6px 20px rgba(124,58,237,0.12);color:#fff;font-weight:800}
     .logo span{font-weight:800}
     nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
-    nav a{display:inline-block;padding:10px 12px;border-radius:12px;color:#e8ecff;text-decoration:none;font-weight:600}
-    nav a:hover{background:rgba(110,231,255,.15)}
+    nav a{display:inline-block;padding:10px 12px;border-radius:12px;color:var(--text);text-decoration:none;font-weight:600}
+    nav a:hover{background:rgba(14,165,233,0.06)}
 
     /* FLOATING CONTACT (right corner) */
     .float-contact{position:fixed;right:16px;top:16px;z-index:1000}
-    .float-contact .bubble{background:var(--card);border:1px solid rgba(255,255,255,.06);padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:10px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+    .float-contact .bubble{background:var(--card);border:1px solid var(--soft-border);padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:10px;box-shadow:0 6px 24px rgba(2,6,23,0.06);color:var(--muted)}
     .float-contact .bubble .hidden-info{display:none;white-space:nowrap}
     .float-contact:hover .hidden-info{display:inline}
 
-    /* HERO with moving background */
-    .hero{position:relative;min-height:84vh;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
-    .hero::before{content:"";position:absolute;inset:-40px;background-image:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1974&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.45) saturate(1.1);animation:pan 35s linear infinite}
-    @keyframes pan{0%{transform:scale(1.1) translateX(0)}50%{transform:scale(1.1) translateX(-8%)}100%{transform:scale(1.1) translateX(0)}}
+    /* HERO with subtle moving background */
+    .hero{position:relative;min-height:72vh;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--soft-border)}
+    .hero::before{content:"";position:absolute;inset:-30px;background-image:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1974&auto=format&fit=crop');background-size:cover;background-position:center;opacity:.18;filter:saturate(.9);animation:pan 45s linear infinite}
+    @keyframes pan{0%{transform:scale(1.05) translateX(0)}50%{transform:scale(1.05) translateX(-6%)}100%{transform:scale(1.05) translateX(0)}}
     .hero .content{position:relative;text-align:center;padding:24px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(34,197,94,.18);border:1px solid rgba(34,197,94,.35);border-radius:999px;font-weight:700;color:#d1fae5}
-    .title{font-size:clamp(28px,5.6vw,64px);line-height:1.05;margin:16px 0 10px}
-    .subtitle{font-size:clamp(16px,2.2vw,22px);color:var(--muted);margin-bottom:22px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.12);border-radius:999px;font-weight:700;color:var(--brand)}
+    .title{font-size:clamp(26px,5.6vw,48px);line-height:1.05;margin:16px 0 10px;color:var(--text)}
+    .subtitle{font-size:clamp(14px,2.2vw,18px);color:var(--muted);margin-bottom:22px}
     .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:linear-gradient(135deg,rgba(124,58,237,.75),rgba(110,231,255,.6));color:#001015;text-decoration:none;font-weight:800;box-shadow:0 8px 30px rgba(110,231,255,.35)}
-    .btn.ghost{background:rgba(14,20,55,.6);color:#e6eeff}
+    .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(2,6,23,0.06);background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(14,165,233,.14));color:var(--text);text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(2,6,23,0.04)}
+    .btn.ghost{background:transparent;color:var(--muted)}
 
     /* HIGHLIGHTS */
-    section{padding:56px 0}
+    section{padding:48px 0}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card{background:var(--card);border:1px solid var(--soft-border);border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
     .kpis .card{grid-column:span 3}
     .kpis h3{margin:0 0 8px}
 
     /* COURSES */
     .courses .card{grid-column:span 4;position:relative;overflow:hidden}
-    .course-hero{height:180px;border-radius:14px;overflow:hidden;margin-bottom:12px;position:relative}
-    .slide-track{display:flex;width:calc(300px * 8);animation:scroll 22s linear infinite}
-    .slide{min-width:300px;height:180px;background-size:cover;background-position:center}
+    .course-hero{height:160px;border-radius:10px;overflow:hidden;margin-bottom:12px;position:relative}
+    .slide-track{display:flex;width:calc(300px * 8);animation:scroll 28s linear infinite}
+    .slide{min-width:300px;height:160px;background-size:cover;background-position:center}
     @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
     /* WHY CHOOSE US */
     .why .card{grid-column:span 4}
 
     /* PLACEMENT GALLERY */
-    .gallery .card{grid-column:span 3;cursor:pointer;transition:.2s transform}
+    .gallery .card{grid-column:span 3;cursor:pointer;transition:.18s transform}
     .gallery .card:hover{transform:translateY(-4px)}
-    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px}
 
     /* LOCATIONS STRIP */
-    .locations{background:linear-gradient(90deg,rgba(124,58,237,.25),rgba(110,231,255,.15));border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-    .pill{display:inline-block;margin:6px;padding:8px 12px;border-radius:999px;border:1px dashed rgba(255,255,255,.3)}
+    .locations{background:linear-gradient(90deg,rgba(124,58,237,.03),rgba(14,165,233,.02));border-top:1px solid var(--soft-border);border-bottom:1px solid var(--soft-border)}
+    .pill{display:inline-block;margin:6px;padding:8px 12px;border-radius:999px;border:1px dashed rgba(15,23,42,0.04);color:var(--muted)}
 
     /* FOOTER */
-    footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.06);background:#0b132b}
+    footer{padding:32px 0;border-top:1px solid var(--soft-border);background:transparent;color:var(--muted)}
 
     /* MODALS */
-    dialog{width:min(720px,95vw);border:none;border-radius:20px;padding:0;background:#0f152b;color:#fff;box-shadow:0 20px 80px rgba(0,0,0,.45)}
-    dialog::backdrop{background:rgba(0,0,0,.6)}
-    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .modal-body{padding:20px}
-    .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .input{width:100%;padding:12px 14px;border-radius:12px;background:#0c1430;border:1px solid rgba(255,255,255,.08);color:#fff}
-    .select{width:100%;padding:12px 14px;border-radius:12px;background:#0c1430;border:1px solid rgba(255,255,255,.08);color:#fff}
-    .close{background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer}
+    dialog{width:min(720px,95vw);border:none;border-radius:12px;padding:0;background:var(--card);color:var(--text);box-shadow:0 20px 60px rgba(2,6,23,0.08)}
+    dialog::backdrop{background:rgba(2,6,23,0.35)}
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--soft-border)}
+    .modal-body{padding:16px}
+    .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .input{width:100%;padding:10px 12px;border-radius:10px;background:#f8fafc;border:1px solid var(--soft-border);color:var(--text)}
+    .select{width:100%;padding:10px 12px;border-radius:10px;background:#f8fafc;border:1px solid var(--soft-border);color:var(--text)}
+    .close{background:transparent;border:none;color:var(--muted);font-size:20px;cursor:pointer}
 
     /* RESPONSIVE */
     @media (max-width:900px){
@@ -130,7 +139,7 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="content">
-      <div class="badge"><i class="fa-solid fa-shield-check"></i> 100% Trusted • Govt. Authority • National Skill Develop</div>
+      <div class="badge"><i class="fa-solid fa-shield-check"></i> Trusted • Govt. Authority • National Skill Develop</div>
       <h1 class="title" data-i18n="hero_title">Medical Coding Career Starts Here</h1>
       <p class="subtitle" data-i18n="hero_sub">Basic • Advanced • HCC Coding Pro — Learn with live practice & placement assistance.</p>
       <div class="cta">
@@ -138,7 +147,7 @@
         <a class="btn ghost" data-open="demoModal"><i class="fa-solid fa-video"></i> Book Demo Class</a>
         <a class="btn ghost" data-open="langModal"><i class="fa-solid fa-language"></i> தமிழ் / EN / മലയാളം</a>
       </div>
-      <div style="margin-top:18px;color:#b8c4e3">
+      <div style="margin-top:14px;color:var(--muted)">
         <i class="fa-brands fa-instagram"></i>
         <a href="https://instagram.com/Villageit.medicalcoding" target="_blank" rel="noreferrer">@Villageit.medicalcoding</a>
         &nbsp;•&nbsp; WhatsApp: <a href="https://wa.me/918903108605" target="_blank" rel="noreferrer">8903108605</a>
@@ -148,18 +157,18 @@
 
   <!-- KPI / Highlights -->
   <section class="wrap kpis" id="key-highlights">
-    <h2 style="margin:0 0 16px">Key Highlights</h2>
+    <h2 style="margin:0 0 12px">Key Highlights</h2>
     <div class="grid">
-      <div class="card"><h3>100% Placement Support</h3><p>Students are guided till they land a job. Ties with leading providers.</p></div>
-      <div class="card"><h3>Live Charts Experience</h3><canvas id="expChart" height="140"></canvas></div>
-      <div class="card"><h3>Govt. / NSD Focus</h3><p>Aligned with National Skill development goals.</p></div>
-      <div class="card"><h3>Multi‑Language</h3><p>Tamil • English • Malayalam interface & training support.</p></div>
+      <div class="card"><h3>100% Placement Support</h3><p style="color:var(--muted)">Students are guided until they land a job. Ties with leading providers.</p></div>
+      <div class="card"><h3>Live Charts Experience</h3><canvas id="expChart" height="120"></canvas></div>
+      <div class="card"><h3>Govt. / NSD Focus</h3><p style="color:var(--muted)">Aligned with National Skill development goals.</p></div>
+      <div class="card"><h3>Multi‑Language</h3><p style="color:var(--muted)">Tamil • English • Malayalam interface & training support.</p></div>
     </div>
   </section>
 
   <!-- Courses with moving image strips -->
   <section class="wrap courses" id="courses">
-    <h2 style="margin:0 0 16px">Our Courses</h2>
+    <h2 style="margin:0 0 12px">Our Courses</h2>
     <div class="grid">
       <article class="card">
         <div class="course-hero" aria-label="Basic Medical Coding visuals">
@@ -167,13 +176,10 @@
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581092580495-5cbf41b1b0c6?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1582719188393-b1f82f67c7b6?q=80&w=1200&auto=format&fit=crop')"></div>
-            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1200&auto=format&fit=crop')"></div>
-            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1551292831-023188e78222?q=80&w=1200&auto=format&fit=crop')"></div>
-            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1526253038957-bce54e05968b?q=80&w=1200&auto=format&fit=crop')"></div>
           </div>
         </div>
         <h3>Basic Medical Coding</h3>
-        <p>ICD-10 fundamentals, guidelines, anatomy basics. Ideal for beginners.</p>
+        <p style="color:var(--muted)">ICD-10 fundamentals, guidelines, anatomy basics. Ideal for beginners.</p>
         <div class="cta"><a class="btn" data-open="applyModal">Apply</a><a class="btn ghost" data-open="demoModal">Demo</a></div>
       </article>
       <article class="card">
@@ -182,11 +188,10 @@
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1542736667-069246bdbc74?q=80&w=1200&auto=format&fit=crop')"></div>
-            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1587502537481-49cf1f3af807?q=80&w=1200&auto=format&fit=crop')"></div>
           </div>
         </div>
         <h3>Advanced Medical Coding</h3>
-        <p>PCS, OP/INP, payer edits, audits, compliance. Hands-on cases.</p>
+        <p style="color:var(--muted)">PCS, OP/INP, payer edits, audits, compliance. Hands-on cases.</p>
         <div class="cta"><a class="btn" data-open="applyModal">Apply</a><a class="btn ghost" data-open="demoModal">Demo</a></div>
       </article>
       <article class="card">
@@ -198,7 +203,7 @@
           </div>
         </div>
         <h3>HCC Coding Pro</h3>
-        <p>Risk adjustment, RAF optimization, documentation integrity.</p>
+        <p style="color:var(--muted)">Risk adjustment, RAF optimization, documentation integrity.</p>
         <div class="cta"><a class="btn" data-open="applyModal">Apply</a><a class="btn ghost" data-open="demoModal">Demo</a></div>
       </article>
     </div>
@@ -206,11 +211,11 @@
 
   <!-- Why Choose Us -->
   <section class="wrap why" id="why">
-    <h2 style="margin:0 0 16px">Why Choose VITMCI?</h2>
+    <h2 style="margin:0 0 12px">Why Choose VITMCI?</h2>
     <div class="grid">
-      <div class="card"><h3>Industry Trainers</h3><p>Experienced coders & auditors with live project exposure.</p></div>
-      <div class="card"><h3>Job-Ready Projects</h3><p>Portfolio & resume prep, mock interviews, HR guidance.</p></div>
-      <div class="card"><h3>VITHC Work Option</h3><p>On successful course completion, opportunity to work with VITHC.</p></div>
+      <div class="card"><h3>Industry Trainers</h3><p style="color:var(--muted)">Experienced coders & auditors with live project exposure.</p></div>
+      <div class="card"><h3>Job-Ready Projects</h3><p style="color:var(--muted)">Portfolio & resume prep, mock interviews, HR guidance.</p></div>
+      <div class="card"><h3>VITHC Work Option</h3><p style="color:var(--muted)">On successful course completion, opportunity to work with VITHC.</p></div>
     </div>
   </section>
 
@@ -229,40 +234,40 @@
 
   <!-- Placement Gallery -->
   <section class="wrap" id="gallery">
-    <h2 style="margin:0 0 16px">Model Placement Members (10)</h2>
+    <h2 style="margin:0 0 12px">Model Placement Members (10)</h2>
     <div class="grid gallery" id="students">
-      <!-- 10 student cards -->
-      <div class="card" data-photo="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop"><img alt="Student 1" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop"><h4>Priya</h4><small>Coder @ Parallon</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop"><img alt="Student 2" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600&auto=format&fit=crop"><h4>Karthik</h4><small>Coder @ Optum</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"><img alt="Student 3" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"><h4>Divya</h4><small>Coder @ R1</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"><img alt="Student 4" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop"><h4>Arun</h4><small>Coder @ Omega</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop"><img alt="Student 5" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop"><h4>Meera</h4><small>Coder @ AGS</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop"><img alt="Student 6" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=600&auto=format&fit=crop"><h4>Naveen</h4><small>Coder @ GeBBS</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop"><img alt="Student 7" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop"><h4>Sandhya</h4><small>Coder @ Cognizant</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"><img alt="Student 8" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"><h4>Rahul</h4><small>Coder @ AccessHealth</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop"><img alt="Student 9" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop"><h4>Swetha</h4><small>Coder @ Guidehouse</small></div>
-      <div class="card" data-photo="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop"><img alt="Student 10" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600&auto=format&fit=crop"><h4>Vijay</h4><small>Coder @ UHG</small></div>
+      <!-- 10 student cards (placeholders) -->
+      <div class="card" data-photo="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop"><img alt="Student 1" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop"><h4>Priya</h4><small style="color:var(--muted)">Coder @ Parallon</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop"><img alt="Student 2" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600&auto=format&fit=crop"><h4>Karthik</h4><small style="color:var(--muted)">Coder @ Optum</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"><img alt="Student 3" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"><h4>Divya</h4><small style="color:var(--muted)">Coder @ R1</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"><img alt="Student 4" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop"><h4>Arun</h4><small style="color:var(--muted)">Coder @ Omega</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop"><img alt="Student 5" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop"><h4>Meera</h4><small style="color:var(--muted)">Coder @ AGS</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop"><img alt="Student 6" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=600&auto=format&fit=crop"><h4>Naveen</h4><small style="color:var(--muted)">Coder @ GeBBS</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop"><img alt="Student 7" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop"><h4>Sandhya</h4><small style="color:var(--muted)">Coder @ Cognizant</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"><img alt="Student 8" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"><h4>Rahul</h4><small style="color:var(--muted)">Coder @ AccessHealth</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop"><img alt="Student 9" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop"><h4>Swetha</h4><small style="color:var(--muted)">Coder @ Guidehouse</small></div>
+      <div class="card" data-photo="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=1200&auto=format&fit=crop"><img alt="Student 10" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600&auto=format&fit=crop"><h4>Vijay</h4><small style="color:var(--muted)">Coder @ UHG</small></div>
     </div>
   </section>
 
   <!-- Services / Marketing Pages Covered -->
   <section class="wrap" id="services">
-    <h2 style="margin:0 0 16px">Services & Marketing Pages</h2>
+    <h2 style="margin:0 0 12px">Services & Marketing Pages</h2>
     <div class="grid">
-      <div class="card" style="grid-column:span 6"><h3>Training Services</h3><ul><li>Basic, Advanced & HCC Pro Programs</li><li>Weekend & Weekday Batches</li><li>Interview & Resume Prep</li><li>Internship & Project Support</li></ul></div>
-      <div class="card" style="grid-column:span 6"><h3>Student Marketing Pages</h3><p>Every student gets a mini portfolio page to showcase certificates, projects, and practice logs—boosting placement chances.</p></div>
+      <div class="card" style="grid-column:span 6"><h3>Training Services</h3><ul style="color:var(--muted)"><li>Basic, Advanced & HCC Pro Programs</li><li>Weekend & Weekday Batches</li><li>Interview & Resume Prep</li><li>Internship & Project Support</li></ul></div>
+      <div class="card" style="grid-column:span 6"><h3>Student Marketing Pages</h3><p style="color:var(--muted)">Every student gets a mini portfolio page to showcase certificates, projects, and practice logs—boosting placement chances.</p></div>
     </div>
   </section>
 
   <!-- About -->
   <section class="wrap" id="about">
-    <h2 style="margin:0 0 16px">About Us</h2>
+    <h2 style="margin:0 0 12px">About Us</h2>
     <div class="grid">
-      <div class="card" style="grid-column:span 7"><p>Founded in 2023, VITMCI Institute focuses on high‑impact training in Medical Coding with 100% placement support. We operate across Thanjavur, Nagapattinam, Thiruvarur, and Mayiladuthurai.
-      </p><p>Email: <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a>
+      <div class="card" style="grid-column:span 7"><p style="color:var(--muted)">Founded in 2023, VITMCI Institute focuses on high‑impact training in Medical Coding with 100% placement support. We operate across Thanjavur, Nagapattinam, Thiruvarur, and Mayiladuthurai.
+      </p><p style="color:var(--muted)">Email: <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a>
       <br>WhatsApp: <a href="https://wa.me/918903108605" target="_blank" rel="noreferrer">8903108605</a>
       <br>Instagram: <a href="https://instagram.com/Villageit.medicalcoding" target="_blank" rel="noreferrer">@Villageit.medicalcoding</a></p></div>
-      <div class="card" style="grid-column:span 5"><h3>Top of Header Links</h3><p>Home • Services • About Us • Gallery • Testimonials • Contact Us • Enquiry Form — each opens a quick modal for seamless navigation.</p></div>
+      <div class="card" style="grid-column:span 5"><h3>Top of Header Links</h3><p style="color:var(--muted)">Home • Services • About Us • Gallery • Testimonials • Contact Us • Enquiry Form — each opens a quick modal for seamless navigation.</p></div>
     </div>
   </section>
 
@@ -271,12 +276,12 @@
     <div class="wrap grid">
       <div style="grid-column:span 6">
         <h3>Contact</h3>
-        <p><i class="fa-solid fa-phone"></i> 8903108605<br>
+        <p style="color:var(--muted)"><i class="fa-solid fa-phone"></i> 8903108605<br>
         <i class="fa-solid fa-envelope"></i> villageinfotechclient@gmail.com</p>
       </div>
       <div style="grid-column:span 6">
         <h3>Legal & Trust</h3>
-        <p>100% Trusted • Govt. Authority • National Skill Develop</p>
+        <p style="color:var(--muted)">Trusted • Govt. Authority • National Skill Develop</p>
         <small style="color:var(--muted)">© 2025 VITMCI Institute</small>
       </div>
     </div>
@@ -331,18 +336,18 @@
     </div>
   </dialog>
 
-  <dialog id="homeModal"><div class="modal-head"><strong>Home</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p>Welcome to VITMCI Institute. Explore courses, placements, and apply instantly.</p></div></dialog>
-  <dialog id="servicesModal"><div class="modal-head"><strong>Services</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p>Training • Projects • Interviews • Placement assistance • Student marketing pages.</p></div></dialog>
-  <dialog id="aboutModal"><div class="modal-head"><strong>About Us</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p>Founded 2023. Mission: transform careers in healthcare through coding education.</p></div></dialog>
-  <dialog id="galleryModal"><div class="modal-head"><strong>Gallery</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p>10 model placement members — click any student card to view larger.</p></div></dialog>
-  <dialog id="testimonialsModal"><div class="modal-head"><strong>Testimonials</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><blockquote>“Got placed within 2 months of course completion!” — Priya</blockquote></div></dialog>
-  <dialog id="contactModal"><div class="modal-head"><strong>Contact</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p>Email: villageinfotechclient@gmail.com<br>WhatsApp: 8903108605</p></div></dialog>
+  <dialog id="homeModal"><div class="modal-head"><strong>Home</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p style="color:var(--muted)">Welcome to VITMCI Institute. Explore courses, placements, and apply instantly.</p></div></dialog>
+  <dialog id="servicesModal"><div class="modal-head"><strong>Services</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p style="color:var(--muted)">Training • Projects • Interviews • Placement assistance • Student marketing pages.</p></div></dialog>
+  <dialog id="aboutModal"><div class="modal-head"><strong>About Us</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p style="color:var(--muted)">Founded 2023. Mission: transform careers in healthcare through coding education.</p></div></dialog>
+  <dialog id="galleryModal"><div class="modal-head"><strong>Gallery</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p style="color:var(--muted)">10 model placement members — click any student card to view larger.</p></div></dialog>
+  <dialog id="testimonialsModal"><div class="modal-head"><strong>Testimonials</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><blockquote style="color:var(--muted)">“Got placed within 2 months of course completion!” — Priya</blockquote></div></dialog>
+  <dialog id="contactModal"><div class="modal-head"><strong>Contact</strong><button class="close" data-close>&times;</button></div><div class="modal-body"><p style="color:var(--muted)">Email: villageinfotechclient@gmail.com<br>WhatsApp: 8903108605</p></div></dialog>
 
   <!-- Image viewer modal for students -->
   <dialog id="photoModal" aria-label="Student Photo">
     <div class="modal-head"><strong id="photoTitle">Student</strong><button class="close" data-close>&times;</button></div>
     <div class="modal-body" style="text-align:center">
-      <img id="photoImg" alt="Student" style="max-width:100%;border-radius:16px" />
+      <img id="photoImg" alt="Student" style="max-width:100%;border-radius:12px" />
     </div>
   </dialog>
 
@@ -369,7 +374,7 @@
     (()=>{
       const ctx=document.getElementById('expChart');
       if(!ctx) return;
-      const chart=new Chart(ctx,{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6'],datasets:[{label:'Practice Hours',data:[6,10,14,18,24,30]},{label:'Case Accuracy %',data:[60,68,75,82,88,93]}]},options:{plugins:{legend:{display:true}},scales:{y:{beginAtZero:true}}}});
+      const chart=new Chart(ctx,{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6'],datasets:[{label:'Practice Hours',data:[6,10,14,18,24,30],fill:false},{label:'Case Accuracy %',data:[60,68,75,82,88,93],fill:false}]},options:{plugins:{legend:{display:true}},scales:{y:{beginAtZero:true}}}});
     })();
 
     // Apply form -> compose email + WhatsApp prefill
@@ -377,7 +382,11 @@
       ev.preventDefault();
       const f=ev.target;const data=Object.fromEntries(new FormData(f).entries());
       const subject=encodeURIComponent('Application: '+(data.course||''));
-      const body=encodeURIComponent(`Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nCourse: ${data.course}\nMessage: ${data.msg||''}`);
+      const body=encodeURIComponent(`Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Course: ${data.course}
+Message: ${data.msg||''}`);
       window.open(`mailto:villageinfotechclient@gmail.com?subject=${subject}&body=${body}`,'_blank');
       window.open(`https://wa.me/918903108605?text=${body}`,'_blank');
       f.closest('dialog').close();
@@ -386,7 +395,11 @@
     function submitDemo(ev){
       ev.preventDefault();
       const f=ev.target;const data=Object.fromEntries(new FormData(f).entries());
-      const body=encodeURIComponent(`Demo Request\nName: ${data.name}\nPhone: ${data.phone}\nLanguage: ${data.lang}\nDate: ${data.date}`);
+      const body=encodeURIComponent(`Demo Request
+Name: ${data.name}
+Phone: ${data.phone}
+Language: ${data.lang}
+Date: ${data.date}`);
       window.open(`mailto:villageinfotechclient@gmail.com?subject=${encodeURIComponent('Demo Class Request')}&body=${body}`,'_blank');
       window.open(`https://wa.me/918903108605?text=${body}`,'_blank');
       f.closest('dialog').close();
@@ -396,7 +409,7 @@
     // Simple i18n for hero text
     const dict={
       en:{hero_title:'Medical Coding Career Starts Here',hero_sub:'Basic • Advanced • HCC Coding Pro — Learn with live practice & placement assistance.'},
-      ta:{hero_title:'மெடிக்கல் கோடிங் வேலைக்கு உங்கள் பயணம் இங்கிருந்து!',hero_sub:'பேசிக் • அட்வான்ஸ் • HCC ப்ரோ — நேரடிப் பயிற்சி, ப்ளேஸ்மெண்ட் உதவி.'},
+      ta:{hero_title:'மெடிக்கல் கோடிங் வேலைக்கு உங்கள் பயணம் இங்கிருந்து!',hero_sub:'பேசிக் • அட்வான்ஸ் • HCC ப்ரோ — நேரடிப் பயிற்சி, ப்லேஸ்மெண்ட் உதவி.'},
       ml:{hero_title:'മെഡിക്കൽ കോഡിംഗ് കരിയർ ഇവിടെ തുടങ്ങാം',hero_sub:'ബേസിക് • അഡ്വാൻസ്ഡ് • HCC പ്രോ — ലൈവ് പ്രാക്ടീസ്, പ്ലേസ്‌മെന്റ് സപ്പോർട്ട്.'}
     };
     function setLang(lang){
