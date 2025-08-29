@@ -85,14 +85,54 @@
       .course-list{flex-direction:column}
     }
   </style>
-</head>
-<body>
-  <div class="contact-top">
-    <a href="tel:+918903108605">📞 8903108605</a>
-    <a href="mailto:villageinfotechclient@gmail.com">✉ villageinfotechclient@gmail.com</a>
-    <a href="https://instagram.com/villageit.medicalcoding" target="_blank">📷 @villageit.medicalcoding</a>
-  </div>
+<!-- Floating Contact Bottom Right -->
+<div class="contact-bottom-right">
+  <a href="tel:+918903108605" title="Call/WhatsApp">📞 8903108605</a>
+  <a href="mailto:villageinfotechclient@gmail.com" title="Email">✉ villageinfotechclient@gmail.com</a>
+  <a href="https://instagram.com/villageit.medicalcoding" target="_blank" title="Instagram">📷 @villageit.medicalcoding</a>
+</div>
 
+<style>
+/* Container in bottom-right corner */
+.contact-bottom-right {
+  position: fixed; /* stays visible on scroll */
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column; /* stacked vertically */
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* Style for each contact button */
+.contact-bottom-right a {
+  background: linear-gradient(135deg, #0b63d6, #ff6b6b); /* gradient button */
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(11, 99, 214, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.contact-bottom-right a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(11, 99, 214, 0.3);
+}
+
+/* Small screens adjustment */
+@media(max-width:768px) {
+  .contact-bottom-right a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+</style>
   <header>
     <div class="nav">
       <div class="logo">
